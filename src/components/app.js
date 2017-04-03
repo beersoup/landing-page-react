@@ -10,10 +10,37 @@ const content = {
 }
 
 export default class App extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            classBackgroundColor: false
+        }
+        this.handleScroll = this.handleScroll.bind(this);
+    }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    handleScroll(event) {
+        let scrollTop = event.target.body.scrollTop || event.target.documentElement.scrollTop,
+            itemTranslate = Math.min(0, scrollTop/3 - 60);
+        console.log('Scroll height', scrollTop)
+
+        if(scrollTop > 100) {
+            console.log('MORE THAN 100')
+            this.setState({ classBackgroundColor: true })
+        } else {
+            this.setState({ classBackgroundColor: false })
+        }
+    }
   render() {
+      const classBackgroundColor = this.state.classBackgroundColor ? "fill-bg-color" : ''
     return (
-      <div>
-        <Header />
+      <div onScroll={this.handleScroll}>
+        <Header classBackgroundColor={classBackgroundColor} />
         <Banner backgroundUrl="/style/images/header-background-filtered.jpg"
                 mainHeader={content.mainHeader}
                 secondHeader={content.secondHeader}

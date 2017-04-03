@@ -7,6 +7,7 @@
 body {
     margin: 0;
     padding: 0;
+    height: auto;
     font-family: "Poppins","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
 
@@ -23,7 +24,7 @@ body {
     color: #fff;
     width: 100%;
     margin: 0 auto;
-    padding: 10% 0 30% 0;
+    padding: 20% 0 30% 0;
 }
 .banner-text-wrapper span {
     display: block;
@@ -50,30 +51,143 @@ body {
     right: 7%;
 }
 .header .brand-image {
-    width: 90%;
+    width: 140px;
+    transition: 0.5s ease;
+}
+.menu-list, .get-start-link-wrapper {
+    display: none;
+}
+.header {
+    padding: 20px;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.fill-bg-color {
+    background-color: #162f37;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
 }
 @media (min-width: 768px) {
+    .menu-list, .get-start-link-wrapper {
+        display: block;
+    }
+    .header {
+        padding: 20px;
+        -webkit-transition: all 0.5s linear;
+        transition: all 0.5s linear;
+    }
     .banner-text-wrapper {
         width: 90%;
+        padding-top: 15%;
     }
     .banner-text-wrapper p {
         font-size: 18px;
         line-height: 32px;
     }
-    .header .menu-list {
-        text-align: center;
-    }
-    .header .menu-list li {
+    .menu-list li {
         display: inline-block;
-        padding: 1% 2%;
+        padding: 5px 2% 5px 2%;
     }
-    .header .menu-list li a {
+    .menu-list li a {
         color: #fff;
+        font-size: 12px;
+    }
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .header-wrapper ul {
+        padding-left: 0;
+    }
+    .menu-list {
+        -webkit-flex: 3;
+        flex: 3;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .menu-list li a {
+        text-decoration: none;
+    }
+    .header .navbar-brand {
+        -webkit-flex: none;
+        flex: none;
+        padding-bottom: 0;
+        padding-top: 0;
+        margin-right: 0;
+    }
+    .get-start-link-wrapper {
+        -webkit-flex: none;
+        flex: none;
+    }
+    .get-start-link-wrapper a {
+        color: #fff;
+        font-size: 12px;
+        transition: 0.5s ease;
+        cursor:pointer;
+    }
+    .get-start-link-wrapper a:hover {
+        text-decoration: none;
+        color: #fff;
+    }
+    .get-start-btn {
+        background-color: #00a5bd;
+        padding: 3px 15px;
+        border-radius: 15px;
+        margin-right: 20px;
+        transition: 0.5s ease;
+    }
+    .get-start-btn:hover {
+        background: rgb(59,233,143);
+    }
+
+    .menu-list-item.active {
+        color: #fff;
+        border-bottom: 3px solid #3be98f;
+        transition: 0.5s ease;
+    }
+    .menu-list-item:after {
+        display:block;
+        content: '';
+        border-bottom: 3px solid #3be98f;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+    }
+    .menu-list-item:hover:after {
+        -ms-transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+    .fill-bg-color {
+        background-color: #162f37;
+        padding: 10px;
+        -webkit-transition: all 0.5s linear;
+        transition: all 0.5s linear;
     }
 }
 
+@media (min-width: 990px) {
+    .header .brand-image {
+        width: 200px;
+        -webkit-transition: 0.5s ease;
+        transition: 0.5s ease;
+    }
+    .menu-list li a, .get-start-link-wrapper a {
+        font-size: 14px;
+    }
+}
 @media (min-width: 1200px) {
     .banner-text-wrapper {
         width: 75%;
     }
+    .header-wrapper {
+        width: 1100px;
+    }
+    .menu-list li a, .get-start-link-wrapper a {
+        font-size: 16px;
+    }
+
 }
