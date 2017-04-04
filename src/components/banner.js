@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
 
 
 export default class Banner extends Component {
@@ -11,7 +10,7 @@ export default class Banner extends Component {
         return (
             <div className="banner" style={{ backgroundImage : backgroundURL }}>
                 <div className="container">
-                    <div className="banner-text-wrapper" ref="bannerText">
+                    <div className="banner-text-wrapper">
                         <span>{this.props.mainHeader}</span><br />
                         <h1>{this.props.secondHeader}</h1><br />
                         <p>{this.props.mainText}</p>

@@ -14,7 +14,8 @@ export default class App extends Component {
         super(props)
 
         this.state = {
-            scrollTop100: false
+            scrollTop50: false,
+            scrollTop250: false
         }
         this.handleScroll = this.handleScroll.bind(this);
     }
@@ -27,20 +28,19 @@ export default class App extends Component {
     handleScroll(event) {
         let scrollTop = event.target.body.scrollTop || event.target.documentElement.scrollTop
 
-        if(scrollTop > 100) {
-            console.log('MORE THAN 100')
-            this.setState({ scrollTop100: true })
-        } else {
-            this.setState({ scrollTop100: false })
-        }
+        scrollTop > 50 ? this.setState({ scrollTop50: true }) : this.setState({ scrollTop50: false })
+        scrollTop > 250 ? this.setState({ scrollTop250: true }) : this.setState({ scrollTop250: false })
+
+
     }
   render() {
 
-      const classBackgroundColor = this.state.scrollTop100 ? "fill-bg-color" : ''
-      const classMenuLinkColor = this.state.scrollTop100 ? "menu-list-item link-color-change" : "menu-list-item"
-      const logoMentimeterBlue = this.state.scrollTop100 ? true : false
-      const classLoginBtn = this.state.scrollTop100 ? "login-btn link-color-change" : "login-btn"
-      const classGetStartBtn = this.state.scrollTop100 ? "get-start-btn link-color-change" : "get-start-btn"
+      const classBackgroundColor = this.state.scrollTop50 ? "fill-bg-color" : ''
+      const classMenuLinkColor = this.state.scrollTop50 ? "menu-list-item link-color-change" : "menu-list-item"
+      const logoMentimeterBlue = this.state.scrollTop50 ? true : false
+      const classLoginBtn = this.state.scrollTop50 ? "login-btn link-color-change" : "login-btn"
+      const classGetStartBtn = this.state.scrollTop50 ? "get-start-btn link-color-change" : "get-start-btn"
+      const classMoveDevice = this.state.scrollTop250 ? "device-2 move" : "device-2"
 
     return (
       <div onScroll={this.handleScroll}>
@@ -49,11 +49,11 @@ export default class App extends Component {
                 logoMentimeterBlue={logoMentimeterBlue}
                 classLoginBtn={classLoginBtn}
                 classGetStartBtn={classGetStartBtn} />
-        <Banner backgroundUrl="/style/images/header-background-filtered.jpg"
+        <Banner backgroundUrl="style/images/header-background-filtered.jpg"
                 mainHeader={content.mainHeader}
                 secondHeader={content.secondHeader}
                 mainText={content.mainText}/>
-        <BannerImage />
+        <BannerImage classMoveDevice={classMoveDevice} />
       </div>
     );
   }
