@@ -14,7 +14,7 @@ export default class App extends Component {
         super(props)
 
         this.state = {
-            classBackgroundColor: false
+            scrollTop100: false
         }
         this.handleScroll = this.handleScroll.bind(this);
     }
@@ -25,22 +25,30 @@ export default class App extends Component {
         window.removeEventListener('scroll', this.handleScroll);
     }
     handleScroll(event) {
-        let scrollTop = event.target.body.scrollTop || event.target.documentElement.scrollTop,
-            itemTranslate = Math.min(0, scrollTop/3 - 60);
-        console.log('Scroll height', scrollTop)
+        let scrollTop = event.target.body.scrollTop || event.target.documentElement.scrollTop
 
         if(scrollTop > 100) {
             console.log('MORE THAN 100')
-            this.setState({ classBackgroundColor: true })
+            this.setState({ scrollTop100: true })
         } else {
-            this.setState({ classBackgroundColor: false })
+            this.setState({ scrollTop100: false })
         }
     }
   render() {
-      const classBackgroundColor = this.state.classBackgroundColor ? "fill-bg-color" : ''
+
+      const classBackgroundColor = this.state.scrollTop100 ? "fill-bg-color" : ''
+      const classMenuLinkColor = this.state.scrollTop100 ? "menu-list-item link-color-change" : "menu-list-item"
+      const logoMentimeterBlue = this.state.scrollTop100 ? true : false
+      const classLoginBtn = this.state.scrollTop100 ? "login-btn link-color-change" : "login-btn"
+      const classGetStartBtn = this.state.scrollTop100 ? "get-start-btn link-color-change" : "get-start-btn"
+
     return (
       <div onScroll={this.handleScroll}>
-        <Header classBackgroundColor={classBackgroundColor} />
+        <Header classBackgroundColor={classBackgroundColor}
+                classMenuLinkColor={classMenuLinkColor}
+                logoMentimeterBlue={logoMentimeterBlue}
+                classLoginBtn={classLoginBtn}
+                classGetStartBtn={classGetStartBtn} />
         <Banner backgroundUrl="/style/images/header-background-filtered.jpg"
                 mainHeader={content.mainHeader}
                 secondHeader={content.secondHeader}

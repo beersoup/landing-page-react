@@ -9,9 +9,9 @@ export default class Header extends Component {
         return (
             <div className={'header navbar-fixed-top navbar-transparent ' + this.props.classBackgroundColor}>
                 <div className="header-wrapper">
-                    <Brand />
-                    <Navigation />
-                    <GetStart />
+                    <Brand logoMentimeterBlue={this.props.logoMentimeterBlue} />
+                    <Navigation classMenuLinkColor={this.props.classMenuLinkColor} />
+                    <GetStart classLoginBtn={this.props.classLoginBtn} classGetStartBtn={this.props.classGetStartBtn} />
                 </div>
             </div>
         );
