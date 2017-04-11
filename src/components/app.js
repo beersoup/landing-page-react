@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import Header from './header'
 import Banner from './banner'
-import BannerImage from './banner-image'
+import PageTwo from './page-two'
 
 const content = {
-    mainHeader: "WHY MENTIMETER?",
-    secondHeader: "Create fun and interactive presentations",
-    mainText: "Mentimeter is an easy to use presentation software used by more than 5 million people. With Mentimeter you can create fun and interactive presentations. We help you make your events, presentations, lectures and workshops innovatice and memorable."
+    mainHeader: "WHY?",
+    secondHeader: "Create fun and interactive Web Site",
+    mainText: " It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing."
 }
 
 export default class App extends Component {
@@ -44,7 +44,7 @@ export default class App extends Component {
         const logoMentimeterBlue = this.state.scrollTop50 ? true : false
         const classLoginBtn = this.state.scrollTop50 ? "login-btn link-color-change" : "login-btn"
         const classGetStartBtn = this.state.scrollTop50 ? "get-start-btn link-color-change" : "get-start-btn"
-        const classMoveDevice = this.state.scrollTop250 ? "device-2 move" : "device-2"
+       
 
         return (
             <div onScroll={this.handleScroll}>
@@ -57,8 +57,9 @@ export default class App extends Component {
                         mainHeader={content.mainHeader}
                         secondHeader={content.secondHeader}
                         mainText={content.mainText}
-                        overlayColor="rgba(34, 72, 85, 0.7)"/>
-                <BannerImage classMoveDevice={classMoveDevice}/>
+                        overlayColor="rgba(0,0,0, 0.7)"
+                        scrollTop250={this.state.scrollTop250} />
+                <PageTwo />
             </div>
         );
     }
