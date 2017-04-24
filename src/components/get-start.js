@@ -1,13 +1,18 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 
-export default class GetStart extends Component {
-    render() {
-        return (
-            <div className="get-start-link-wrapper">
-                <a className={this.props.classGetStartBtn} href="#">Get started</a>
-                <a className={this.props.classLoginBtn} href="#">Log in</a>
-            </div>
-        );
-    }
+const GetStart = ({isScrollNav}) => {
+
+    const classLoginBtn = isScrollNav ? "login-btn link-color-change" : "login-btn"
+    const classGetStartBtn = isScrollNav ? "get-start-btn link-color-change" : "get-start-btn"
+
+    return (
+        <div className="get-start-link-wrapper">
+            <a className={classGetStartBtn} href="#">Get started</a>
+            <a className={classLoginBtn} href="#">Log in</a>
+        </div>
+    );
+
 }
+
+export default GetStart

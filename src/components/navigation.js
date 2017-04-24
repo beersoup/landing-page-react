@@ -1,16 +1,20 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 
-export default class Navigation extends Component {
-    render() {
-        return (
-            <ul className="menu-list">
-                <li><a href="#" className={'active ' + this.props.classMenuLinkColor}>Why</a></li>
-                <li><a href="#" className={this.props.classMenuLinkColor}>Inspiration</a></li>
-                <li><a href="#" className={this.props.classMenuLinkColor}>Feature</a></li>
-                <li><a href="#" className={this.props.classMenuLinkColor}>How-to</a></li>
-                <li><a href="#" className={this.props.classMenuLinkColor}>Campaigns</a></li>
-            </ul>
-        );
-    }
+const Navigation = ({isScrollNav}) => {
+
+    const classMenuLinkColor = isScrollNav ? "menu-list-item link-color-change" : "menu-list-item"
+
+    return (
+        <ul className="menu-list">
+            <li><a href="#" className={classMenuLinkColor + ' active'}>Why</a></li>
+            <li><a href="#" className={classMenuLinkColor}>Inspiration</a></li>
+            <li><a href="#" className={classMenuLinkColor}>Feature</a></li>
+            <li><a href="#" className={classMenuLinkColor}>How-to</a></li>
+            <li><a href="#" className={classMenuLinkColor}>Campaigns</a></li>
+        </ul>
+    );
+
 }
+
+export default Navigation

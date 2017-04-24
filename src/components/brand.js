@@ -1,16 +1,17 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 
+const Brand = ({isScrollNav}) => {
 
-
-export default class Brand extends Component {
-    render() {
         return (
             <a href="/" className="navbar-brand">
-                {this.props.logoMentimeterBlue ?
-                    <img className="brand-image" alt="Brand" src="style/images/logo_blue.svg"/> :
+                {isScrollNav ?
+                    <img className="brand-image" alt="Brand" src="style/images/logo_blue.svg"/>
+                    :
                     <img className="brand-image" alt="Brand" src="style/images/logo_white.svg"/>}
             </a>
         );
-    }
+
 }
+
+export default Brand

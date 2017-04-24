@@ -120,12 +120,12 @@ a, a:visited, a:focus, a:active, a:hover {
     }
 }
 
-.device-1 {
+.icon-1 {
     //-webkit-animation: imageFromLeft 1s ease-in;
     //animation: imageFromLeft 1s ease-in;
     width: 50px;
 }
-.device-3 {
+.icon-3 {
     //-webkit-animation: imageFromLeft 1s ease-in;
     //animation: imageFromLeft 1s ease-in;
     width: 50px;
@@ -167,7 +167,7 @@ a, a:visited, a:focus, a:active, a:hover {
     }
 }
 
-.device-2 {
+.icon-2 {
     //-webkit-animation: imageFromRight 1s ease-in;
     //animation: imageFromRight 1s ease-in;
     width: 50px;
@@ -190,7 +190,7 @@ a, a:visited, a:focus, a:active, a:hover {
     }
 }
 
-.device-2.move {
+.icon-2.move {
     -webkit-animation: bounce 1s infinite;
     animation: bounce 1s infinite;
 }

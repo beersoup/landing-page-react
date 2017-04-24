@@ -1,11 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class PageTwo extends Component {
-    render() {
-        return (
-            <div className="page-two">
+const PageTwo = () => <div className="page-two"></div>
 
-            </div>
-        );
-    }
-}
+export default PageTwo
+
