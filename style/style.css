@@ -42,7 +42,7 @@ a, a:visited, a:focus, a:active, a:hover {
 }
 
 .banner-text-wrapper span {
-    display: block;
+    display: none;
 }
 
 .banner-text-wrapper p {
@@ -434,6 +434,11 @@ a, a:visited, a:focus, a:active, a:hover {
     .menu-list li a, .get-start-link-wrapper a {
         font-size: 14px;
     }
+
+    .banner-text-wrapper span {
+    display: block;
+    }
+
 }
 
 @media (min-width: 1200px) {
