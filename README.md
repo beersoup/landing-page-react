@@ -1,7 +1,7 @@
 
 ###Getting Started###
 
-[CLICK TO SEE DEMO](http://jennielenier.com/landing-page-react/)
+[CLICK TO SEE DEMO](http://medlogotyp.se/landing-page/)
 
 ```
 	> git clone https://github.com/beersoup/landing-page-react.git
